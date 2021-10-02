@@ -9,11 +9,11 @@ public class LoopingWhile {
         Scanner input = new Scanner (System.in);
         number = input.nextInt();
         fac =  1 ;
-        i = 1;
-        while (i<=number)
+        
+        while (i=1;i<=number;i++)
         {
             fac = fac * 1;
-            i++;
+          
         }
         System.out.printf("Factorial value of that tumber is : %d \n", fac);
     
