@@ -1,2 +1,2 @@
-x = 5
-print(type(x))
+int_list = [1,2,3,4,5,6]
+print(int_list)
