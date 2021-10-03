@@ -2,7 +2,9 @@
 public class LoopingWhile {
     public static void main (string [] args){
         
-    int number, fac, i;
+    int number;
+        int intfac;
+        int i;
         System.out.println("====Program Calculates Factorial Values With for====");
         System.out.println("Enter number :");
         
