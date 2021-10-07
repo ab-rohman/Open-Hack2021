@@ -1,7 +1,7 @@
-marks = [65, 71, 68, 74, 61]
+marks = [75, 21, 64, 84, 61]
 
 # find sum of all marks
-total_marks = sum(marks)
-print(total_marks)
+totalMarks = sum(marks)
+print(totalMarks)
 
-# Output: 339
+
