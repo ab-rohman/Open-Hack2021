@@ -1,7 +1,9 @@
 public class Loopingdowhile {
     
     public static void main (string [] args){
-        int number, fac, i;
+        int number;
+        int fac;
+        int i;
         System.out.println("====Program Calculates Factorial Values With for====");
         System.out.println("Enter number :");
         
