@@ -4,7 +4,7 @@ public class LoopingWhile {
         
     int number;
         int intfac;
-        int i;
+       
         System.out.println("====Program Calculates Factorial Values With for====");
         System.out.println("Enter number :");
         
@@ -12,7 +12,7 @@ public class LoopingWhile {
         number = input.nextInt();
         fac =  1 ;
         
-        while (i=1;i<=number;i++)
+        while (int i=1;i<=number;i++)
         {
             fac = fac * 1;
           
