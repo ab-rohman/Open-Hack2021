@@ -3,7 +3,9 @@ public class ArrayInputLoop {
         Scanner sc = new Scanner(System.in);
         int[] nilaiUAS = new int [6];
         
-        for (int i=0; i<nilaiUAS.length;i++){
+        int i;
+        
+        for (i=0; i<nilaiUAS.length;i++){
             System.out.println("Masukkan nilai UAS MHS ke-"+i+": ");
             nilaiUAS[i] = sc.nextInt();
         }
