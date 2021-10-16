@@ -6,11 +6,11 @@ public class Calculator {
         double number1, number2, result;
         char operator;
 
-        System.out.print("Input the first number : ");
+        System.out.print("Enter first number : ");
         number1 = input.nextDouble();
-        System.out.print("Input the operator (+, _, *, /)");
+        System.out.print("Enter operator (+, _, *, /)");
         operator = input.next().charAt(0);
-        System.out.print("Input the second number : ");
+        System.out.print("Enter second number : ");
         number2 = input.nextDouble();
 
 
