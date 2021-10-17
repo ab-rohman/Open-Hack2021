@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main()
 {
-  int array[100], n, c, d, position, t;
+  int array[100], n, c, d, pos, t;
 
   printf("Enter number of elements\n");
   scanf("%d", &n);
@@ -13,18 +13,18 @@ int main()
 
   for (c = 0; c < (n - 1); c++) // finding minimum element (n-1) times
   {
-    position = c;
+    pos = c;
 
     for (d = c + 1; d < n; d++)
     {
-      if (array[position] > array[d])
-        position = d;
+      if (array[pos] > array[d])
+        pos = d;
     }
-    if (position != c)
+    if (pos != c)
     {
       t = array[c];
-      array[c] = array[position];
-      array[position] = t;
+      array[c] = array[pos];
+      array[pos] = t;
     }
   }
 
