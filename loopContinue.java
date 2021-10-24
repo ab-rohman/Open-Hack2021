@@ -3,7 +3,8 @@ public class loopContinue{
 	public static void main(String[] args){
 	Scanner input = new Scanner(System.in);
 	
-	int number, b, i, count;
+	int number;
+	int b, i, count;
 	double avg, total;
 	
 	b = 0;
@@ -14,7 +15,7 @@ public class loopContinue{
 		if (number >= 50){
 			continue;
 		}
-	b += number;
+	b = b+ number;
 	count++;	
 	}
 	total = (double) b;
