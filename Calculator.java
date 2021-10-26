@@ -8,7 +8,7 @@ public class Calculator {
 
         System.out.print("Enter first number : ");
         number1 = input.nextDouble();
-        System.out.print("Enter operator (+, _, *, /)");
+        System.out.print("Enter operator (+, -, *, /)");
         operator = input.next().charAt(0);
         System.out.print("Enter second number : ");
         number2 = input.nextDouble();
