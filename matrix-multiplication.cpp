@@ -1,93 +1,74 @@
-/*
-* This C++ program can multiply any two square or rectangular matrices.
-* The below program multiplies two square matrices of size 4 * 4.
-* There is also an example of a rectangular matrix for the same code (commented below).
-* We can change the Matrix value with the number of rows and columns (from MACROs) for Matrix-1
-* and Matrix-2 for different dimensions.
-*/
-
-/*
-* Note: i- The number of columns in Matrix-1 must be equal to the number of rows in Matrix-2.
-*	 ii- Output of multiplicationof Matrix-1 and Matrix-2, results with equalto the number
-*		 of rows of Matrix-1 and thenumber of columns of Matrix-2 i.e. rslt[R1][C2].
-*/
-
 #include <iostream>
-
 using namespace std;
 
-// Edit MACROs here, according to your Matrix Dimensions for mat1[R1][C1] and mat2[R2][C2]
-#define R1 4		 // number of rows in Matrix-1
-#define C1 4		 // number of columns in Matrix-1
-#define R2 4		 // number of rows in Matrix-2
-#define C2 4		 // number of columns in Matrix-2
+int main()
+{
+    int a[10][10], b[10][10], mult[10][10], r1, c1, r2, c2, i, j, k;
 
-void mulMat(int mat1[][C1], int mat2[][C2]) {
-	int rslt[R1][C2];
+    cout << "Enter number of rows for the first matrix: ";
+    cin >> r1;
+    cout << "Enter number of columns for the first matrix: ";
+    cin >> c1;
+    cout << "Enter number of rows for the second matrix: ";
+    cin >> r2;
+    cout << "Enter number of columns for the second matrix: ";
+    cin >> c2;
 
-	cout << "Multiplication of given two matrices is:\n" << endl;
+    // If column of first matrix in not equal to row of second matrix,
+    // ask the user to enter the size of matrix again.
+    while (c1!=r2)
+    {
+        cout << "Error! column of first matrix not equal to row of second.";
 
-	for (int i = 0; i < R1; i++) {
-		for (int j = 0; j < C2; j++) {
-			rslt[i][j] = 0;
+        cout << "Enter rows and columns for first matrix: ";
+        cin >> r1 >> c1;
 
-			for (int k = 0; k < R2; k++) {
-				rslt[i][j] += mat1[i][k] * mat2[k][j];
-			}
+        cout << "Enter rows and columns for second matrix: ";
+        cin >> r2 >> c2;
+    }
 
-			cout << rslt[i][j] << "\t";
-		}
+    // Storing elements of first matrix.
+    cout << endl << "Enter elements of matrix 1:" << endl;
+    for(i = 0; i < r1; ++i)
+        for(j = 0; j < c1; ++j)
+        {
+            cout << "Enter element a" << i + 1 << j + 1 << " : ";
+            cin >> a[i][j];
+        }
 
-		cout << endl;
-	}
+    // Storing elements of second matrix.
+    cout << endl << "Enter elements of matrix 2:" << endl;
+    for(i = 0; i < r2; ++i)
+        for(j = 0; j < c2; ++j)
+        {
+            cout << "Enter element b" << i + 1 << j + 1 << " : ";
+            cin >> b[i][j];
+        }
+
+    // Initializing elements of matrix mult to 0.
+    for(i = 0; i < r1; ++i)
+        for(j = 0; j < c2; ++j)
+        {
+            mult[i][j]=0;
+        }
+
+    // Multiplying matrix a and b and storing in array mult.
+    for(i = 0; i < r1; ++i)
+        for(j = 0; j < c2; ++j)
+            for(k = 0; k < c1; ++k)
+            {
+                mult[i][j] += a[i][k] * b[k][j];
+            }
+
+    // Displaying the multiplication of two matrix.
+    cout << endl << "Output Matrix: " << endl;
+    for(i = 0; i < r1; ++i)
+    for(j = 0; j < c2; ++j)
+    {
+        cout << " " << mult[i][j];
+        if(j == c2-1)
+            cout << endl;
+    }
+
+    return 0;
 }
-
-int main(void) {
-	// Square Matrices
-	// R1 = 4, C1 = 4 and R2 = 4, C2 = 4 (Update these values in MACROs)
-	int mat1[R1][C1] = {
-			{1, 1, 1, 1},
-			{2, 2, 2, 2},
-			{3, 3, 3, 3},
-			{4, 4, 4, 4}
-	};
-
-	int mat2[R2][C2] = {
-			{1, 1, 1, 1},
-			{2, 2, 2, 2},
-			{3, 3, 3, 3},
-			{4, 4, 4, 4}
-	};
-
-	/*
-	// Rectangular Matrices
-	// R1 = 3, C1 = 4 and R2 = 4, C2 = 3 (Update these values in MACROs)
-	int mat1[R1][C1] = {
-				{1, 1, 1, 1},
-				{2, 2, 2, 2},
-				{3, 3, 3, 3}
-	};
-
-	int mat2[R2][C2] = {
-				{1, 1, 1},
-				{2, 2, 2},
-				{3, 3, 3},
-				{4, 4, 4}
-	};
-	*/
-
-	if (C1 != R2) {
-		cout << "The number of columns in Matrix-1 must be equal to the number of rows in "
-				"Matrix-2" << endl;
-		cout << "Please update MACROs according to your array dimension in #define section"
-				<< endl;
-
-		exit(EXIT_FAILURE);
-	}
-
-	mulMat(mat1, mat2);
-
-	return 0;
-}
-
-// This code is contributed by Manish Kumar (mkumar2789)
